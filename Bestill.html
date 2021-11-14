@@ -9,19 +9,41 @@
 <body class="removeBorder" style="background-color:#e7bd03;">
     <img src="Assets/Portrett_4.jpg" alt="" width="100%">
 
+    <div class="thumbnail-container">
+        <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
+        <div class="add_and_subtract_container">
+            <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', -1)" id="vridd_minus">-</button>
+            <input class="number_of_items" type="number" id="antall_vridd" value="0" min="0" oninput="oppdater_antall_bøker()">
+            <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="vridd_plus">+</button> 
+        </div>
+    </div>
+
+    <div class="thumbnail-container">
+        <img src="Assets/" alt="" class="thumbnail">
+        <div class="add_and_subtract_container">
+            <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', -1)" id="ein_stad_minus">-</button>
+            <input class="number_of_items" type="number" id="antall_ein_stad" value="0" min="0" oninput="oppdater_antall_bøker()">
+            <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="ein_stad_plus">+</button> 
+        </div>
+    </div>
+
     <form action="https://formsubmit.co/benjaminfoldoy@gmail.com" method="POST">
         <div class="fillmid">
-            <div class="flex-container">
-                <div class="flex-item-left">
+            <div class="flex-container1">
+                <div class="flex-item-right">
                     <div class="container">
                         <div class="row">
                             <div class="col-25">
-                                <label for="fname">Total:</label> 
+                                <label for="fname">Total:</label>
                             </div>
                             <div class="col-75">
                                 <input type="text" name="total" id="total" readonly>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="flex-item-left">
+                    <div class="container">
                         <div class="row">
                             <div class="col-25">
                                 <label for="fname">Fornavn:</label> 
@@ -70,15 +92,9 @@
                                 <input type="text" name="postal-code" required>
                             </div>
                         </div>
-                        </div>
-                    
+                        <button type="submit">Bekreft</button>
                     </div>
-                
-                    
-                    
-                    
-                    <button type="submit">Bekreft</button>
-                
+                </div>
                 
             </div>
         </div>
@@ -102,13 +118,28 @@
     antall_ein_stad = 0
     antall_vridd = 0
 
+    function oppdater_antall_bøker(){
+        antall_vridd = parseInt(document.getElementById("antall_vridd").value);
+        antall_einstad = parseInt(document.getElementById("antall_ein_stad").value);
 
+        oppdater_total_pris();
+    }
 
+    function add_to_antall(bok, amount){
+        n = amount
+        if(bok == "vridd"){
+            document.getElementById("antall_vridd").value = parseInt(document.getElementById("antall_vridd").value) + amount;
+        }
+        else if(bok == "ein_stad"){
+            document.getElementById("antall_vridd").value += amount;
+        }
+        oppdater_antall_bøker();
+    }
 
     function oppdater_total_pris(){
         totalpris = pris_ein_stad*antall_ein_stad + pris_vridd*antall_vridd;
         document.getElementById("total").value = String(totalpris);
     }
-    oppdater_total_pris()
+    oppdater_total_pris();
 </script>
 </html>

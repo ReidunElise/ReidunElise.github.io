@@ -31,12 +31,21 @@ input[type=text], select, textarea{
     background-color: #f2f2f2;
     padding: 20px;
   }
+
+  /* Style the container */
+  .container1 {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
   
   /* Floating column for labels: 25% width */
   .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
+    text-align: start;
+    font-size: medium;
   }
   
   /* Floating column for inputs: 75% width */
@@ -96,6 +105,14 @@ input[type=text], select, textarea{
       font-size: 30px;
       text-align: center;
   }
+
+  .flex-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    flex-direction: row-reverse;
+}
   
   .flex-item-left {
     padding: 10px;
@@ -139,4 +156,54 @@ input[type=text], select, textarea{
 
   .fillmid{
     width: 100%;
+}
+
+.thumbnail-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 300px;
+  min-width: 300px;
+  max-width: 500px;
+  width: 90%;
+  color: #e7bd03;
+  background-color: #1f110b;
+}
+
+.thumbnail{
+  height: 300px;
+  padding: 10px;
+}
+
+.number_of_items{
+  font-size: xx-large;
+  width: 60px;
+  height: 40px;
+  text-align:center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.add_and_subtract_container{
+  right: 10px;
+  bottom: 10px;
+  position:absolute;
+}
+
+.plus_and_minus_buttons{
+  height: 40px;
+  width: 30px;
+  vertical-align: bottom;
 }
