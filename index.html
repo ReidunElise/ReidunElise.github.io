@@ -4,32 +4,52 @@
     <meta charset="utf-8">
     <title>Forside</title>
 </head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+    </style>
 <link rel="stylesheet" href="styles.css">
-<body class="removeBorder" style="background-color:#e7bd03;">
+<body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
     <img src="Assets/Front.png" alt="" width="100%">
     <div class="spacing"></div>
-    <div class="flex-container">
-        <button class="flex-item-left lift button" onclick="openUtgivelser()">
-            Utgivelser
-        </button>
-        <button class="flex-item-right lift button" onclick="openBestillBøker()">
-            Bestill bøker
-        </button>
-    </div>
 
     <div class="flex-container">
-        <div class="lift flex-item-left"  style="background-color: #eeeeee; color: black; ">
-            <h1>
-                Om meg:
-            </h2>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+        <div class="flex-item-left" onclick="openUtgivelser()">
+            <button class="lift button">
+                Utgivelser
+            </button>
         </div>
+        <div class="flex-item-left" onclick="openBestillBøker()">
+            <button class="lift button">
+                Bestill bøker
+            </button>
+        </div>
+    </div>
+
+    <div class="spacing"></div>
+
+    <div class="lift">
+        <h1 style="text-align: center;">
+            Om meg:
+        </h1>
+        <p style="text-align: center;">
+            Eg er Reidun Elise Foldøy, fødd 1971 i Stavanger. Busett i Bergen. Gift og to vaksne barn.
+        </p>
+    </div>
+
+    
+
+    
+
+    <div class="flex-container">
+        
 
         <div class="flex-item-right lift">
             
         </div>
+    </div>
+
+    <div class="spacing">
+
     </div>
 
     <div class="bottom" style="padding: 30px;">

@@ -4,16 +4,29 @@
     <meta charset="utf-8">
     <title>Forside</title>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+</style>
 <link rel="stylesheet" href="styles.css">
 
-<body class="removeBorder" style="background-color:#e7bd03;">
+<body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
     <img src="Assets/Portrett_4.jpg" alt="" width="100%">
-
     <div class="flex-container">
         <div class="left">
             <div class="thumbnail-container">
-                <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
+                <div class="thumbnail">
+                    <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
+                </div>
+                <div class="thumtext">
+                    <h3 class="small-margin">Vridd</h3>
+                    <h5 class="small-margin">Forlaget Ylajali 2021</h5>
+                    <h6 class="small-margin">Roman</h6>
+                    <h3 class="medium-margin">kr 349,-</h3>
+                    
+                </div>
                 <div class="add_and_subtract_container">
+                    <button href="" class=" small-button ">Les om boka her</button>
+
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', -1)" id="vridd_minus">-</button>
                     <input class="number_of_items" type="number" id="antall_vridd" value="0" min="0" oninput="oppdater_antall_bøker()">
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="vridd_plus">+</button> 
@@ -22,8 +35,18 @@
         </div>
         <div class="left">
             <div class="thumbnail-container">
-                <img src="Assets/EinStadÅMøtast.PNG" alt="" class="thumbnail">
+                <div class="thumbnail">
+                    <img src="Assets/EinStadÅMøtast.PNG" alt="" class="thumbnail">
+                </div>
+                <div class="thumtext">
+                    <h3 class="small-margin">Ein stad å møtast</h3>
+                    <h5 class="small-margin">Aschehoug forlag 2008</h5>
+                    <h6 class="small-margin">Noveller</h6>
+                    <h3 class="medium-margin">kr 199,-</h3>
+                    
+                </div>
                 <div class="add_and_subtract_container">
+                    <button href="" class=" small-button ">Les om boka her</button>
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', -1)" id="ein_stad_minus">-</button>
                     <input class="number_of_items" type="number" id="antall_ein_stad" value="0" min="0" oninput="oppdater_antall_bøker()">
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', 1)" id="ein_stad_plus">+</button> 
@@ -32,36 +55,45 @@
         </div>
     </div>
     
+    <div class="fullmid">
+        <div style="text-align: center;"  class="lift">
+            <h3 style="margin: 10px;">
+                Du vil motta stadfesting av bestillinga og betalingsinformasjon på mail innen 24 timer.
+            </h3>
+        </div>
+    </div>
 
     <form action="https://formsubmit.co/benjaminfoldoy@gmail.com" method="POST">
         <div class="fillmid">
             <div class="flex-container1">
                 <div class="flex-item-right">
                     <div class="container">
+                        Kasse:
                         <div class="row">
                             <div class="col-25">
                                 <label for="fname" id="ant_vridd"></label>
                             </div>
-                            <div class="col-75">
-                                <input style="border: none; border-bottom: black dotted;" class="valuta shopping_item" type="text" name="antall vridd" id="pris_vridd" readonly>
+                            <div class="col-75" style="border: none; border-bottom: 1px black solid;" id="pris_vridd_container">
+                                <input style="border: none;" class="valuta shopping_item" type="text" name="pris vridd" id="pris_vridd" readonly>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-25">
+                            <div class="col-25" >
                                 <label  for="fname" id="ant_ein_stad"></label>
                             </div>
-                            <div class="col-75">
-                                <input style="border: none; border-bottom: black dotted;" class="valuta shopping_item" type="text" name="antall ein stad å møtast" id="pris_ein_stad" readonly>
+                            <div class="col-75" style="border: none; border-bottom: 1px black solid;" id="pris_ein_stad_container">
+                                <input style="border: none;" class="valuta shopping_item" type="text" name="inntkekt ein stad å møtast" id="pris_ein_stad" readonly>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-25">
-                                <label for="fname">Total:</label>
+                                <label id="total_lbl" for="fname">Total:</label>
                             </div>
-                            <div class="col-75">
-                                <input class="valuta" type="text" name="total" id="total" readonly>
+                            <div class="col-75 " style="border: none; border-bottom: black double;" id="total_container">
+                                <input style="border: none" class="valuta shopping_item" type="text" name="total" id="total" readonly>
                             </div>
                         </div>
+                        <button class="button" style="cursor: pointer; font-size: large; margin-top: 30px; width: 75%; float: right;" type="submit" id="send_order">Send bestilling</button>
                     </div>
                 </div>
                 <div class="flex-item-left">
@@ -114,7 +146,14 @@
                                 <input type="text" name="postal-code" required>
                             </div>
                         </div>
-                        <button type="submit">Send bestilling</button>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Annet:</label> 
+                            </div>
+                            <div class="col-75">
+                                <textarea rows="4" cols="1" style="text-align: start;" type="text" name="Annet"> </textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -164,21 +203,39 @@
         if(antall_vridd == 0){
             document.getElementById("ant_vridd").style.display = "none";
             document.getElementById("pris_vridd").style.display = "none";
+            document.getElementById("pris_vridd_container").style.display = "none";
         }
         else{
             document.getElementById("ant_vridd").style.display = "block";
             document.getElementById("ant_vridd").innerHTML = antall_vridd.toString() + " x Vridd " + "(" + pris_vridd.toString() + ",-)";
             document.getElementById("pris_vridd").style.display = "block";
+            document.getElementById("pris_vridd_container").style.display = "block";
         }
 
         if(antall_ein_stad == 0){
             document.getElementById("ant_ein_stad").style.display = "none";
             document.getElementById("pris_ein_stad").style.display = "none";
+            document.getElementById("pris_ein_stad_container").style.display = "none";
         }
         else{
             document.getElementById("ant_ein_stad").style.display = "block";
             document.getElementById("ant_ein_stad").innerHTML = antall_ein_stad.toString() + " x Ein stad å møtast " + "(" + pris_ein_stad.toString() + ",-)";
             document.getElementById("pris_ein_stad").style.display = "block";
+            document.getElementById("pris_ein_stad_container").style.display = "block";
+        }
+
+        if(antall_ein_stad == 0 && antall_vridd == 0){
+            document.getElementById("total").style.display = "none";
+            document.getElementById("total_lbl").style.display = "none";
+            document.getElementById("total_container").style.display = "none";
+            document.getElementById("send_order").style.display = "none";
+
+        }
+        else{
+            document.getElementById("total").style.display = "block";
+            document.getElementById("total_lbl").style.display = "block";
+            document.getElementById("total_container").style.display = "block";
+            document.getElementById("send_order").style.display = "block";
         }
 
         document.getElementById("pris_vridd").value = String(pris_vridd*antall_vridd) + ",-";
