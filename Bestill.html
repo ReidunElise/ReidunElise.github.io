@@ -9,23 +9,29 @@
 <body class="removeBorder" style="background-color:#e7bd03;">
     <img src="Assets/Portrett_4.jpg" alt="" width="100%">
 
-    <div class="thumbnail-container">
-        <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
-        <div class="add_and_subtract_container">
-            <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', -1)" id="vridd_minus">-</button>
-            <input class="number_of_items" type="number" id="antall_vridd" value="0" min="0" oninput="oppdater_antall_bøker()">
-            <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="vridd_plus">+</button> 
+    <div class="flex-container">
+        <div class="left">
+            <div class="thumbnail-container">
+                <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
+                <div class="add_and_subtract_container">
+                    <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', -1)" id="vridd_minus">-</button>
+                    <input class="number_of_items" type="number" id="antall_vridd" value="0" min="0" oninput="oppdater_antall_bøker()">
+                    <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="vridd_plus">+</button> 
+                </div>
+            </div>
+        </div>
+        <div class="left">
+            <div class="thumbnail-container">
+                <img src="Assets/EinStadÅMøtast.PNG" alt="" class="thumbnail">
+                <div class="add_and_subtract_container">
+                    <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', -1)" id="ein_stad_minus">-</button>
+                    <input class="number_of_items" type="number" id="antall_ein_stad" value="0" min="0" oninput="oppdater_antall_bøker()">
+                    <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', 1)" id="ein_stad_plus">+</button> 
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="thumbnail-container">
-        <img src="Assets/EinStadÅMøtast.PNG" alt="" class="thumbnail">
-        <div class="add_and_subtract_container">
-            <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', -1)" id="ein_stad_minus">-</button>
-            <input class="number_of_items" type="number" id="antall_ein_stad" value="0" min="0" oninput="oppdater_antall_bøker()">
-            <button class="plus_and_minus_buttons" onclick="add_to_antall('ein_stad', 1)" id="ein_stad_plus">+</button> 
-        </div>
-    </div>
+    
 
     <form action="https://formsubmit.co/benjaminfoldoy@gmail.com" method="POST">
         <div class="fillmid">
@@ -34,10 +40,26 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-25">
+                                <label for="fname" id="ant_vridd"></label>
+                            </div>
+                            <div class="col-75">
+                                <input style="border: none; border-bottom: black dotted;" class="valuta shopping_item" type="text" name="antall vridd" id="pris_vridd" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label  for="fname" id="ant_ein_stad"></label>
+                            </div>
+                            <div class="col-75">
+                                <input style="border: none; border-bottom: black dotted;" class="valuta shopping_item" type="text" name="antall ein stad å møtast" id="pris_ein_stad" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
                                 <label for="fname">Total:</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" name="total" id="total" readonly>
+                                <input class="valuta" type="text" name="total" id="total" readonly>
                             </div>
                         </div>
                     </div>
@@ -92,7 +114,7 @@
                                 <input type="text" name="postal-code" required>
                             </div>
                         </div>
-                        <button type="submit">Bekreft</button>
+                        <button type="submit">Send bestilling</button>
                     </div>
                 </div>
                 
@@ -104,7 +126,7 @@
             Kontakt:
         </h3> 
         <h4>
-            E-mail: reidunelisefoldoy@yahoo.com
+            E-mail: reidunelise@yahoo.com
         </h4>
         <h4>
             Mobil: +47 976 08 530
@@ -138,7 +160,31 @@
 
     function oppdater_total_pris(){
         totalpris = pris_ein_stad*antall_ein_stad + pris_vridd*antall_vridd;
-        document.getElementById("total").value = String(totalpris);
+
+        if(antall_vridd == 0){
+            document.getElementById("ant_vridd").style.display = "none";
+            document.getElementById("pris_vridd").style.display = "none";
+        }
+        else{
+            document.getElementById("ant_vridd").style.display = "block";
+            document.getElementById("ant_vridd").innerHTML = antall_vridd.toString() + " x Vridd " + "(" + pris_vridd.toString() + ",-)";
+            document.getElementById("pris_vridd").style.display = "block";
+        }
+
+        if(antall_ein_stad == 0){
+            document.getElementById("ant_ein_stad").style.display = "none";
+            document.getElementById("pris_ein_stad").style.display = "none";
+        }
+        else{
+            document.getElementById("ant_ein_stad").style.display = "block";
+            document.getElementById("ant_ein_stad").innerHTML = antall_ein_stad.toString() + " x Ein stad å møtast " + "(" + pris_ein_stad.toString() + ",-)";
+            document.getElementById("pris_ein_stad").style.display = "block";
+        }
+
+        document.getElementById("pris_vridd").value = String(pris_vridd*antall_vridd) + ",-";
+        document.getElementById("pris_ein_stad").value = String(pris_ein_stad*antall_ein_stad) + ",-";
+
+        document.getElementById("total").value = String(totalpris) + ",-";
     }
     oppdater_total_pris();
 </script>
