@@ -306,3 +306,13 @@ a {
   width: 400px;
   float: left;
 }
+
+.front-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 100%;
+  perspective: 8px;
+  perspective-origin: 50%;
+}
