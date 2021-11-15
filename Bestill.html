@@ -108,7 +108,7 @@
                                 <label  for="fname" id="ant_ein_stad"></label>
                             </div>
                             <div class="col-75" style="border: none; border-bottom: 1px black solid;" id="pris_ein_stad_container">
-                                <input style="border: none;" class="valuta shopping_item" type="text" name="inntkekt ein stad å møtast" id="pris_ein_stad" readonly>
+                                <input style="border: none;" class="valuta shopping_item" type="text" name="pris ein stad å møtast" id="pris_ein_stad" readonly>
                             </div>
                         </div>
                         <div class="row">
@@ -248,7 +248,9 @@
         }
         else{
             document.getElementById("ant_vridd").style.display = "block";
-            document.getElementById("ant_vridd").innerHTML = antall_vridd.toString() + " x Vridd " + "(" + pris_vridd.toString() + ",-)";
+            var labelname = antall_vridd.toString() + " x Vridd " + "(" + pris_vridd.toString() + ",-)";
+            document.getElementById("ant_vridd").innerHTML = labelname;
+            document.getElementById("pris_vridd").setAttribute("name", labelname)
             document.getElementById("pris_vridd").style.display = "block";
             document.getElementById("pris_vridd_container").style.display = "block";
         }
@@ -260,7 +262,9 @@
         }
         else{
             document.getElementById("ant_ein_stad").style.display = "block";
-            document.getElementById("ant_ein_stad").innerHTML = antall_ein_stad.toString() + " x Ein stad å møtast " + "(" + pris_ein_stad.toString() + ",-)";
+            var labelname = antall_ein_stad.toString() + " x Ein stad å møtast " + "(" + pris_ein_stad.toString() + ",-)";
+            document.getElementById("ant_ein_stad").innerHTML = labelname;
+            document.getElementById("ant_ein_stad").setAttribute("name", labelname)
             document.getElementById("pris_ein_stad").style.display = "block";
             document.getElementById("pris_ein_stad_container").style.display = "block";
         }
