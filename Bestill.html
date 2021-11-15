@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Forside</title>
+    <title>Butikk</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
@@ -11,6 +11,32 @@
 
 <body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
     <img src="Assets/Portrett_4.jpg" alt="" width="100%">
+
+    <div class="small-spacing"></div>
+
+    <div class="flex-container">
+        <div class="flex-item-left" onclick="openForside()">
+            <button class="lift button">
+                Forside
+            </button>
+        </div>
+        <div class="flex-item-left" onclick="openUtgivelser()">
+            <button class="lift button">
+                Utgivelser
+            </button>
+        </div>
+    </div>
+
+    <div class="small-spacing"></div>
+
+    <div class="fullmid">
+        <div style="text-align: center;"  class="lift">
+            <h3 style="margin: 10px;">
+                Du får gratis frakt i heile landet.
+            </h3>
+        </div>
+    </div>
+
     <div class="flex-container">
         <div class="left">
             <div class="thumbnail-container">
@@ -161,16 +187,24 @@
         </div>
     </form>
     <div class="bottom" style="padding: 30px;">
-        <h3>
-            Kontakt:
-        </h3> 
-        <h4>
-            E-mail: reidunelise@yahoo.com
-        </h4>
-        <h4>
-            Mobil: +47 976 08 530
-        </h4>
-
+        <div class="flex-container">
+            <div class="flex-item-left" style="text-align: start;">
+                <h5>
+                    Kontakt:
+                </h5> 
+                <h6>
+                    E-mail: reidunelise@yahoo.com
+                </h6>
+                <h6>
+                    Mobil: +47 976 08 530
+                </h6>
+            </div>
+            <div class="flex-item-left" style="text-align: end;">
+                <h6>
+                    Forograf for toppbilder: Helge Skodvin
+                </h6> 
+            </div>
+        </div>
     </div>
 </body>
 <script>
@@ -195,6 +229,13 @@
             document.getElementById("antall_ein_stad").value = parseInt(document.getElementById("antall_ein_stad").value) + amount;
         }
         oppdater_antall_bøker();
+    }
+
+    function openUtgivelser(){
+        window.location.href = "Utgivelser.html"
+    }
+    function openForside(){
+        window.location.href = "index.html"
     }
 
     function oppdater_total_pris(){

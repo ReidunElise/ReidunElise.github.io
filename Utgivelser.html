@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forside</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+</style>
+<link rel="stylesheet" href="styles.css">
+<body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
+    <img src="Assets/Portrett_2.jpg" style="z-index: 10;" alt="image" width="100%" id="forbilde">
+    <div class="small-spacing"></div>
+
+    <div class="flex-container">
+        <div class="flex-item-left" onclick="openForside()">
+            <button class="lift button">
+                Forside
+            </button>
+        </div>
+        <div class="flex-item-left" onclick="openBestillBøker()">
+            <button class="lift button">
+                Bestill bøker
+            </button>
+        </div>
+    </div>
+
+    <div class="small-spacing"></div>
+
+    <div class="lift">
+        <h1 style="text-align: center;">
+            Mine utgivelser:
+        </h1>
+    </div>
+
+    <div class="small-spacing"> </div>
+    
+    <div class="utgivelser-bok-container">
+        <div class="utgivelser-bok-img">
+            <img class="utgivelser-bok-img"  src="Assets/vridd_omslag.jpg" alt="">
+        </div>
+        
+        <div style="margin-left: 30px; text-align: center;">
+            <h1 class="small-margin"><br>Vridd</h1>
+            <h3 class="small-margin">Forlaget Ylajali 2021</h3>
+            <h4 class="small-margin">Roman</h4>
+            <p style="padding-left: 10px; overflow: auto; max-height: 440px;">
+                Vridd handlar om barnet Hjørdis, som er fødd med klumpfot, og om mora hennar, ei aleinemor, som livnærer seg som gravferdsmusikar. <br> <br>
+                Hjørdis sin far er ein abstrakt figur i barnets bevisstheit, og finst berre som eit avisutklipp.<br><br>
+                Mor og dotter saknar kvarandre enormt under sjukehusopphalda, men gjennom draumar, fantasi og førestillingar, lever dei eit rikt liv i gjenskinnet av kvarandre. <br><br>
+                Dette er ein roman som handlar om å finne plassen sin i verda. <br>
+                Å få vera den ein er, på trass av stigma, avgrensingar og eit ønske frå omverda om å ha defineringsmakt.
+                Ein roman der kjærleiken, kunsten, vennskapen og den ikkje-fysiske livsutfaldinga, står i sterk kontrast til eit stivbeint og innskrenka rørslerom i instituasjonane.                
+            </p> 
+        </div>
+    </div>
+
+    <div class="utgivelser-bok-container">
+        <div class="utgivelser-bok-img">
+            <img class="utgivelser-bok-img"  src="Assets/EinStadÅMøtast.PNG" alt="">
+        </div>
+        
+        <div style="margin-left: 30px; text-align: center;">
+            <h1 class="small-margin"><br>Ein stad å møtast</h1>
+            <h3 class="small-margin">Aschehoug 2008</h3>
+            <h4 class="small-margin">Noveller</h4>
+            <p style="padding-left: 10px; overflow: auto; max-height: 440px;">
+                I dei 12 novellene dukkar karakterane opp i kvarandre sine historier, noko som til saman også skapar ei eiga historie. <br>
+                Fellesnemnaren her er at karakterane strever med å finne sin plass, i felleskap med andre. <br> 
+                Å finne den grensa mellom det som er individets rom og omsynet til den andre og fellesskapen.
+            </p> 
+        </div>
+    </div>
+
+    <div class="small-spacing"> </div>
+
+    <div class="bottom" style="padding: 30px;">
+        <div class="flex-container">
+            <div class="flex-item-left" style="text-align: start;">
+                <h5>
+                    Kontakt:
+                </h5> 
+                <h6>
+                    E-mail: reidunelise@yahoo.com
+                </h6>
+                <h6>
+                    Mobil: +47 976 08 530
+                </h6>
+            </div>
+            <div class="flex-item-left" style="text-align: end;">
+                <h6>
+                    Forograf for toppbilder: Helge Skodvin
+                </h6> 
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+<script>
+
+
+
+    function openForside(){
+        window.location.href = "index.html"
+    }
+    function openBestillBøker(){
+        window.location.href = "Bestill.html"
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js">
+    var image = document.getElementsByID('forbilde');
+    new simpleParallax(image, {
+
+        overflow: true
+    });
+</script>
+</html>

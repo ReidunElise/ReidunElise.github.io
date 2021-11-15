@@ -75,8 +75,10 @@ input[type=text], select, textarea{
     background: radial-gradient(#ffd35c, #c57a00);
     height: 100%;
     margin: 0;
+    z-index: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    transform: translateZ(0px);
   }
 .lift{
   padding-top: 20px;
@@ -172,6 +174,11 @@ input[type=text], select, textarea{
       height: 200px;
       width: 100%;
   }
+
+  .small-spacing{
+    height: 100px;
+    width: 100%;
+}
   
   .bottom{
       color: #e7bd03;
@@ -282,4 +289,19 @@ a {
 .center{
   size: 100%;
   text-align: center;
+}
+
+.utgivelser-bok-container{
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: white;
+  width: 79%;
+  height: 600px;
+  position: relative;
+}
+
+.utgivelser-bok-img{
+  height: 600px;
+  width: 400px;
+  float: left;
 }
