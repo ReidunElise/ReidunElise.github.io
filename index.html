@@ -9,17 +9,27 @@
     </style>
 <link rel="stylesheet" href="styles.css">
 <body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
-        <div id="frontimagecontainer" class="" style="position: relative; overflow: hidden; width: 100%; height: 1000px;">
-            <img style="position:absolute;" src="Assets/Front.png" alt="" width="100%" id="forsidebilde">
+        <div  id="frontimagecontainer" class="" style=" width: 100%;">
         </div>
+        <img style="position:fixed; z-index: 2;" src="Assets/Portrett_1.jpg" alt="" width="100%" id="forsidebilde">
+        <div id="reidunelise" style="position:fixed; z-index: 3; margin-left: 60%;">
+            <h1 style="font-size: 60px; color: #e7bd03; text-align: center; font-weight: 900;">
+                Reidun Elise Foldøy
+            </h1>
+    
+            <h1 style="font-size: 40px; color: #e7bd03; text-align: center;">
+                Forlaget Ylajali
+            </h1>
+        </div>
+        
     <div style="width: 100%; background-color: transparent;" id="underforsidebilde"></div>
     <div class="flex-container">
-        <div class="flex-item-left" onclick="openUtgivelser()">
+        <div class="flex-item-left"  onclick="openUtgivelser()"  style="margin-top: 200px;">
             <button class="lift button">
                 Utgivelser
             </button>
         </div>
-        <div class="flex-item-left" onclick="openBestillBøker()">
+        <div class="flex-item-left" onclick="openBestillBøker()"  style="margin-top: 200px;">
             <button class="lift button">
                 Bestill bøker
             </button>
@@ -57,10 +67,7 @@
 </body>
 <script src="elements.js"></script>
 <script>
-
-var i = document.querySelector("#forsidebilde").clientHeight;
-document.getElementById("underforsidebilde").style.height = String(i - 1 * parseInt(window.scrollY)) + "px";
-
+    
     function openUtgivelser(){
         window.location.href = "Utgivelser.html"
     }
