@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="styles.css">
 
 <body class="removeBorder" style="font-family: 'Lato', sans-serif; font-weight: 600;">
-    <img src="Assets/Portrett_4.jpg" alt="" width="100%">
+    <img src="Assets/Portrett_4.jpg" alt="" width="100%" id="forsidebilde">
 
-    <div class="small-spacing"></div>
+    <div class="spacing"></div>
 
     <div class="flex-container">
         <div class="flex-item-left">
@@ -26,8 +26,7 @@
             </button>
         </div>
     </div>
-
-    <div class="small-spacing"></div>
+    <div class="spacing"></div>
 
     <div class="fullmid">
         <div style="text-align: center;"  class="lift">
@@ -37,9 +36,12 @@
         </div>
     </div>
 
-    <div class="flex-container">
-        <div class="left">
-            <div class="thumbnail-container">
+    <div class="spacing"></div>
+
+
+        <div class="flex-container">
+            <div class="left">
+                <div class="thumbnail-container">
                 <div class="thumbnail">
                     <img src="Assets/vridd_omslag.jpg" alt="" class="thumbnail">
                 </div>
@@ -52,7 +54,7 @@
                 </div>
                 <div class="add_and_subtract_container">
                     <button href="" class=" small-button" onclick="openUtgivelser()">Les om boka her</button>
-
+                    
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', -1)" id="vridd_minus">-</button>
                     <input class="number_of_items" type="number" id="antall_vridd" value="0" min="0" oninput="oppdater_antall_bøker()">
                     <button class="plus_and_minus_buttons" onclick="add_to_antall('vridd', 1)" id="vridd_plus">+</button> 
@@ -80,6 +82,8 @@
             </div>
         </div>
     </div>
+
+    <div class="small-spacing"></div>
     
     <div class="fullmid">
         <div style="text-align: center;"  class="lift">
@@ -119,7 +123,7 @@
                                 <input style="border: none" class="valuta shopping_item" type="text" name="total" id="total" readonly>
                             </div>
                         </div>
-                        <button class="button" style="cursor: pointer; font-size: large; margin-top: 30px; width: 75%; float: right;" type="submit" id="send_order" value="Tusen_takk.html">Send bestilling</button>
+                        <button class="button" style="cursor: pointer; font-size: large; margin-top: 30px; width: 75%; float: right;" type="submit" id="send_order" value="reidunelisefoldoy.no/Tusen_takk.html">Send bestilling</button>
                     </div>
                 </div>
                 <div class="flex-item-left">
@@ -185,6 +189,7 @@
                 
             </div>
         </div>
+        <input type="hidden" name="_next" value="https://google.com">
     </form>
     <div class="bottom" style="padding: 30px;">
         <div class="flex-container">
