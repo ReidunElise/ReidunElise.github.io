@@ -57,6 +57,10 @@
 </body>
 <script src="elements.js"></script>
 <script>
+
+var i = document.querySelector("#forsidebilde").clientHeight;
+document.getElementById("underforsidebilde").style.height = String(i - 1 * parseInt(window.scrollY)) + "px";
+
     function openUtgivelser(){
         window.location.href = "Utgivelser.html"
     }
