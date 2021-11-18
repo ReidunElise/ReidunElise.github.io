@@ -177,6 +177,11 @@ input[type=text], select, textarea{
     padding: 0px;
     flex: 50%;
   }
+
+  .flex-item-left-33 {
+    padding: 0px;
+    flex: 33%;
+  }
   
   .flex-item-right {
     padding: 0px;
