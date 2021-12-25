@@ -13,29 +13,42 @@
     <div  id="frontimagecontainer" class="" style=" width: 100%;">
     </div>
     <img style="position:fixed; z-index: 2;" src="Assets/Vridd_bilde.jpg" alt="" width="100%" id="forsidebilde">
+    
     <div class="flex-container">
-        <div class="flex-item-left">
+        <div class="flex-item-left" style="margin-top: 200px;">
             <button class="lift button" onclick="openForside()">
                 Forside
             </button>
         </div>
-        <div class="flex-item-left">
+        <div class="flex-item-left" style="margin-top: 200px;">
             <button class="lift button" onclick="openUtgivelser()">
-                Utgivelser
+                Utgivingar
             </button>
         </div>
     </div>
     <div class="spacing"></div>
 
+    <div class="lift1" style="text-align: center;"> 
+        <h1>
+            Du kan også få Vridd som e-bok 
+            <a target="_blank" style="color: #1b2128;" class="dark-text" href="https://l.facebook.com/l.php?u=https%3A%2F%2Febok.no%2Febok%2Fvridd_reidun-elise-foldoy%2F%3Ffbclid%3DIwAR0zmL2CjwEyft_u6BAhsZoE46FklWvRWlIgsxjtEJ9VdiUcunztkBJY1Fs&h=AT2KrN0H3wXrvJNki9yCylVC9t2e7lUYJKc7HjbKhvlfFxcVItTMFojrQIywpKxYCIgItJQThvL8gKyF8Mtn-xihrRMfxK5YtNuIi960B7WsuRGdGUYWV7LnzUNVnaNSNpyXwg">
+                her
+            </a>
+            !
+        </h1>
+    </div>
+    
+    <div class="spacing"></div>
+
     <div class="fullmid">
-        <div style="text-align: center;"  class="lift1">
+        <div style="text-align: center;"  class="lift">
             <h3 style="margin: 10px;">
                 Gratis frakt i Norge.
             </h3>
         </div>
     </div>
 
-    <div class="spacing"></div>
+    <div class="small-spacing"></div>
 
 
         <div class="flex-container">
@@ -97,7 +110,7 @@
             <div class="flex-container1">
                 <div class="flex-item-right">
                     <div class="container">
-                        Kasse:
+                        Mi bestilling:
                         <div class="row">
                             <div class="col-25">
                                 <label for="fname" id="ant_vridd"></label>
@@ -115,6 +128,14 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-25" >
+                                <label  for="fname" id="frakt1">Frakt</label>
+                            </div>
+                            <div class="col-75" style="border: none; border-bottom: 1px black solid;" id="frakt2">
+                                <input style="border: none;" class="valuta shopping_item" type="text" name="pris ein stad å møtast" id="pris_ein_stad" value="0,-" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-25">
                                 <label id="total_lbl" for="fname">Total:</label>
                             </div>
@@ -129,7 +150,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-25">
-                                <label for="fname">Fornavn:</label> 
+                                <label for="fname">Fornamn:</label> 
                             </div>
                             <div class="col-75">
                                 <input type="text" name="given-name" required>
@@ -137,7 +158,7 @@
                         </div>
                         <div class="row">
                             <div class="col-25">
-                                <label for="fname">Etternavn:</label> 
+                                <label for="fname">Etternamn:</label> 
                             </div>
                             <div class="col-75">
                                 <input type="text" name="family-name" required>
@@ -177,7 +198,7 @@
                         </div>
                         <div class="row">
                             <div class="col-25">
-                                <label for="fname">Annet:</label> 
+                                <label for="fname">Anna:</label> 
                             </div>
                             <div class="col-75">
                                 <textarea rows="4" cols="1" style="text-align: start;" type="text" name="Annet"> </textarea>
@@ -200,7 +221,7 @@
                     Kontakt:
                 </h5> 
                 <h6>
-                    E-mail: kontakt@reidunelisefoldoy.no
+                    E-mail: E-mail: <a href="mailto:reidunelise@yahoo.com">reidunelise@yahoo.com</a>
                 </h6>
                 <h6>
                     Mobil: +47 976 08 530
@@ -208,11 +229,11 @@
             </div>
             <div class="flex-item-left-33" style="text-align: start; width: 33%;">
                 <h5>
-                    Kjøp og salg:
+                    Kjøp og sal:
                 </h5> 
                 <h4>
-                    <a target="_blank" href="kjopsbetingelser.html" style="cursor: pointer; font-size: 20px; text-decoration: none;">
-                        Kjøpsbetingelser
+                    <a target="_blank" href="Kjopsbetingelser.html" style="cursor: pointer; font-size: 20px; text-decoration: none;">
+                        Kjøpsbetingelsar
                     </a>
                 </h4>
                 <h4>
@@ -223,7 +244,7 @@
             </div>
             <div class="flex-item-left-33" style="text-align: end; width: 33%;">
                 <h4 style="font-size: 20px; text-decoration: none;">
-                    Fotograf for toppbilder: Helge Skodvin
+                    Fotograf for toppbilete: Helge Skodvin
                 </h4>
                 <h4 style="font-size: 20px; text-decoration: none;">
                     Web-design: Benjamin Foldøy
@@ -301,13 +322,16 @@
             document.getElementById("total_lbl").style.display = "none";
             document.getElementById("total_container").style.display = "none";
             document.getElementById("send_order").style.display = "none";
-
+            document.getElementById("frakt1").style.display = "none";
+            document.getElementById("frakt2").style.display = "none";
         }
         else{
             document.getElementById("total").style.display = "block";
             document.getElementById("total_lbl").style.display = "block";
             document.getElementById("total_container").style.display = "block";
             document.getElementById("send_order").style.display = "block";
+            document.getElementById("frakt1").style.display = "block";
+            document.getElementById("frakt2").style.display = "block";
         }
 
         document.getElementById("pris_vridd").value = String(pris_vridd*antall_vridd) + ",-";

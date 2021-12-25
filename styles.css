@@ -310,6 +310,10 @@ a {
   color: #e7bd03;
 }
 
+.dark-text{
+  color: #1b2128;
+}
+
 .center{
   size: 100%;
   text-align: center;
